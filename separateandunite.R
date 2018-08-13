@@ -54,3 +54,10 @@ dat %>% separate(key, c("year", "first_variable_name", "second_variable_name"),
   
 ##Ejercicios
 
+d <- read_csv("data/times.csv")
+
+#tidy_data <- d %>% 
+#gather(key = "key", value = "value", -age_group) %>% 
+#separate(col= key, into = c("year", "variable_name"), sep = "_") %>% 
+#spread(key= variable_name, value = value)  
+
