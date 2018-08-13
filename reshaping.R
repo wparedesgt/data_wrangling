@@ -40,6 +40,7 @@ data("us_contagious_diseases")
 
 datos <- us_contagious_diseases
 
-dat_wide <- datos %>% spread(state, year, population, disease)
+dat_wide <- datos %>% spread(disease,state, fill= NA, drop = TRUE)
+
 
 
