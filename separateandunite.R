@@ -58,6 +58,40 @@ d <- read_csv("data/times.csv")
 
 #tidy_data <- d %>% 
 #gather(key = "key", value = "value", -age_group) %>% 
-#separate(col= key, into = c("year", "variable_name"), sep = "_") %>% 
+#separate(col= key, into = c("year", "variable_name"), sep = ".") %>% 
 #spread(key= variable_name, value = value)  
 
+tidy_data <- d %>% 
+  gather(key = "key", value = "value", -age_group) %>% 
+  separate(col= key, into = c("year", "variable_name"), sep = "_") %>% 
+  spread(key= variable_name, value = value)  
+
+#tidy_data <- d %>% 
+#  gather(key = "key", value = "value") %>% 
+#  separate(col= key, into = c("year", "variable_name"), sep = "_") %>% 
+#  spread(key= variable_name, value = value)  
+
+#tidy_data <- d %>% 
+#  gather(key = "key", value = "value", -age_group) %>% 
+#  separate(col= key, into = "year", sep = "_") %>% 
+#  spread(key= year, value = value)  
+
+#No.2
+
+stats <- read_csv("data/stats.csv")
+
+#tidy_data <- stats %>% 
+#  separate(col = key, into = c("player", variable_name), sep = "_", extra = "merge") %>%
+#  spread(key = variable_name, value = value)
+
+tidy_data <- stats %>% 
+  separate(col = key, into = c("player", "variable_name1", "variable_name2"), sep = "_", fill = "right") %>% 
+  unite(col = variable_name, variable_name1, variable_name2, sep = "_") %>%
+    spread(key = variable_name, value = value)
+
+head(tidy_data)
+
+tidy_data <- stats %>% 
+  separate(col = key, into = c("player", "variable_name"), sep = "_") %>% 
+  spread(key = variable_name, value = value)
+head(tidy_data)
