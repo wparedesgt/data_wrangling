@@ -1,0 +1,1 @@
+#Definición de cadenas: comillas simples y dobles 
