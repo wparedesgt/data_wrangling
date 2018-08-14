@@ -42,8 +42,20 @@ setwd(Total)
 
 file.copy(fullpath, getwd())
 
+#ver si existe el archivo
+
+file.exists(filename)
+
 #reasignando directorio de trabajo
 
 setwd(Directorio_Trabajo)
 
+#Otro Ejercicio
 
+getwd()
+
+filename <- "murders.csv"
+
+path <- system.file("extdata", package = "dslabs")
+
+file.copy()
