@@ -13,7 +13,7 @@ library(readxl)
 
 read_lines("data/murders.csv", n_max = 3)
 
-dat <- read.csv("data/murders.csv")
+dat <- read_csv("data/murders.csv")
 
 head(dat)
 tail(dat)

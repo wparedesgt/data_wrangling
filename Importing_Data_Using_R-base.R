@@ -29,7 +29,7 @@ url <- "https://github.com/wparedesgt/murders/blob/master/data/murders.csv"
 
 tmp_filename <- tempfile()
 download.file(url, tmp_filename)
-dat <- read.csv(tmp_filename)
+dat <- read_csv(tmp_filename)
 file.remove(tmp_filename)
 
 #ejercicio
